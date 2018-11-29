@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CustomXdtTransforms.Tests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExpectedEncrypted1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EncryptedValue1</Value>
+    </Setting>
+    <Setting Name="ExpectedNotEncrypted1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SomeNotEncryptedValue1</Value>
+    </Setting>
+    <Setting Name="ExpectedEncrypted2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EncryptedValue2</Value>
+    </Setting>
+    <Setting Name="ExpectedNotEncrypted2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SomeNotEncryptedValue2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

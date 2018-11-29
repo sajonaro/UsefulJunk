@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{849F25FE-B8BC-4A1D-B86E-EDE4888BD38F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CF.API.Objects</RootNamespace>
+    <AssemblyName>CF.API.Objects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Certificates\Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Google|AnyCPU'">
+    <OutputPath>bin\Google\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.AnalysisServices.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="BearerToken.cs" />
+    <Compile Include="Body.cs" />
+    <Compile Include="Budget.cs" />
+    <Compile Include="AttributeBulkQueryList.cs" />
+    <Compile Include="BudgetList.cs" />
+    <Compile Include="AttributeQuery.cs" />
+    <Compile Include="AuditHistoryDetail.cs" />
+    <Compile Include="AuditHistoryDocumentInfo.cs" />
+    <Compile Include="AuditHistoryDocumentInfoRequest.cs" />
+    <Compile Include="AuditHistoryRequest.cs" />
+    <Compile Include="CapControlsSSOAccess.cs" />
+    <Compile Include="CapTableDTO.cs" />
+    <Compile Include="CapTableQueryResult.cs" />
+    <Compile Include="CommentaryResult.cs" />
+    <Compile Include="CompanyEntity.cs" />
+    <Compile Include="DataQueryList.cs" />
+    <Compile Include="DataQuery.cs" />
+    <Compile Include="DataQueryResult.cs" />
+    <Compile Include="EntityContext.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FinancialDTO.cs" />
+    <Compile Include="QvalParseRuleList.cs" />
+    <Compile Include="QvalParseRule.cs" />
+    <Compile Include="CapTableQuery.cs" />
+    <Compile Include="CapTableQueryList.cs" />
+    <Compile Include="CFEntityNotesPeriod.cs" />
+    <Compile Include="CFEntityNotesPeriodList.cs" />
+    <Compile Include="CFFeatures.cs" />
+    <Compile Include="CFReturnSet.cs" />
+    <Compile Include="CFValue.cs" />
+    <Compile Include="CFValueSet.cs" />
+    <Compile Include="CMEmailTemplate.cs" />
+    <Compile Include="CMFormulaObject.cs" />
+    <Compile Include="Commentary.cs" />
+    <Compile Include="CommentaryData.cs" />
+    <Compile Include="CommentaryDataList.cs" />
+    <Compile Include="CommentaryHistory.cs" />
+    <Compile Include="CommentarySection.cs" />
+    <Compile Include="CommentarySubSection.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="attribute.cs" />
+    <Compile Include="AttributeList.cs" />
+    <Compile Include="EntityList.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerList.cs" />
+    <Compile Include="Division.cs" />
+    <Compile Include="Entities.cs" />
+    <Compile Include="EntityListPlusMetrics.cs" />
+    <Compile Include="Fund.cs" />
+    <Compile Include="HelpRequest.cs" />
+    <Compile Include="iPut.cs" />
+    <Compile Include="Metric.cs" />
+    <Compile Include="MetricETL.cs" />
+    <Compile Include="MetricFormula.cs" />
+    <Compile Include="NonFinancialAccountList.cs" />
+    <Compile Include="MetricList.cs" />
+    <Compile Include="NonFinancialAccount.cs" />
+    <Compile Include="Period.cs" />
+    <Compile Include="PeriodList.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="ProfessionalServicesAssociate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerializePoster.cs" />
+    <Compile Include="Site.cs" />
+    <Compile Include="Statement.cs" />
+    <Compile Include="StatementDetail.cs" />
+    <Compile Include="StatementValue.cs" />
+    <Compile Include="UserProfile.cs" />
+    <Compile Include="TransactionDataDTO.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Year.cs" />
+    <Compile Include="YearList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Certificates\Key.pfx">
+      <Link>Key.pfx</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

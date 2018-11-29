@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EnvironmentInfoProviders</id>
+    <version>$version$</version>
+    <title>EnvironmentInfoProviders</title>
+		<authors>IPREO</authors>
+		<owners>IPREO</owners>
+		<licenseUrl>http://www.ipreo.com/disclaimer.html</licenseUrl>
+		<projectUrl>http://www.ipreo.com/</projectUrl>
+		<iconUrl>http://media.glassdoor.com/sqls/12636/ipreo-squarelogo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains general environment information provider contracts</description>
+    <copyright>Copyright © IPREO 2015</copyright>
+    <dependencies>
+      <dependency id="Moq" version="3.1.416.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\EnvironmentInfoProviders\bin\Release\EnvironmentInfoProviders.dll" target="lib\net35\EnvironmentInfoProviders.dll" />
+    <file src="..\EnvironmentInfoProviders\bin\Release\EnvironmentInfoProviders.dll.config" target="lib\net35\EnvironmentInfoProviders.dll.config" />
+    <file src="..\EnvironmentInfoProviders\bin\Release\EnvironmentInfoProviders.pdb" target="lib\net35\EnvironmentInfoProviders.pdb" />
+    <file src="..\EnvironmentInfoProviders\bin\Release\Utilities.Cryptography.dll" target="lib\net35\Utilities.Cryptography.dll" />
+
+    <file src="..\EnvironmentInfoProviders\tools\*" target="tools" />
+    <file src="..\EnvironmentInfoProviders\build\*" target="build" />
+
+    <file src="..\EnvironmentInfoProviders\bin\Release\EnvironmentInfoProviders.*.dll.config" target="tools" />
+    
+    <file src="..\EnvironmentInfoProviders\**\*.cs" target="src\EnvironmentInfoProviders" />
+    <file src="..\EnvironmentInfoProviders\**\*.csproj" target="src\EnvironmentInfoProviders" />
+    <file src="..\EnvironmentInfoProviders\**\*.vspscc" target="src\EnvironmentInfoProviders" />
+    <file src="..\EnvironmentInfoProviders\**\App.config" target="src\EnvironmentInfoProviders" />
+    <file src="..\EnvironmentInfoProviders\**\packages.config" target="src\EnvironmentInfoProviders" />
+
+    <file src="..\Certificates\Key.pfx" target="src\Certificates\Key.pfx" />
+  </files>
+</package>

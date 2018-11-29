@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>CustomXdtTransforms</id>
+		<version>$version$</version>
+		<title>CustomXdtTransforms</title>
+		<authors>IPREO</authors>
+		<owners>IPREO</owners>
+		<licenseUrl>http://www.ipreo.com/disclaimer.html</licenseUrl>
+		<projectUrl>http://www.ipreo.com/</projectUrl>
+		<iconUrl>http://media.glassdoor.com/sqls/12636/ipreo-squarelogo.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Contains transforms</description>
+		<copyright>© 2015 Ipreo. All rights reserved.</copyright>
+	</metadata>
+	<files>
+		<file src="..\CustomXdtTransforms\bin\Release\*.dll" target="tools\" />
+		<file src="..\CustomXdtTransforms\bin\Release\*.pdb" target="tools\" />
+
+		<file src="..\CustomXdtTransforms\build\CustomXdtTransforms.targets" target="build\CustomXdtTransforms.targets" />
+	</files>
+</package>

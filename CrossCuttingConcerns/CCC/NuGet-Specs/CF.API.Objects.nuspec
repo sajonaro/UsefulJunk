@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>CF.API.Objects</id>
+    <version>$version$</version>
+    <title>CF.API.Objects</title>
+    <authors>IPREO</authors>
+    <owners>IPREO</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains domain model of EAI application</description>
+    <copyright>Copyright © IPREO 2015</copyright>
+  </metadata>
+  <files>
+    <file src="..\CF.API.Objects\bin\Release\CF.API.Objects.dll" target="lib\net40\CF.API.Objects.dll" />
+    <file src="..\CF.API.Objects\bin\Release\CF.API.Objects.pdb" target="lib\net40\CF.API.Objects.pdb" />
+
+    <file src="..\CF.API.Objects\**\*.cs" target="src\CF.API.Objects" />
+    <file src="..\CF.API.Objects\**\*.csproj" target="src\CF.API.Objects" />
+    <file src="..\CF.API.Objects\**\*.vspscc" target="src\CF.API.Objects\" />
+
+    <file src="..\Certificates\Key.pfx" target="src\Certificates\Key.pfx" />
+  </files>
+</package>

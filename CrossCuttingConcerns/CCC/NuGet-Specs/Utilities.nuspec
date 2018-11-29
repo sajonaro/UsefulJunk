@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Utilities</id>
+    <version>$version$</version>
+    <title>Utilities</title>
+		<authors>IPREO</authors>
+		<owners>IPREO</owners>
+		<licenseUrl>http://www.ipreo.com/disclaimer.html</licenseUrl>
+		<projectUrl>http://www.ipreo.com/</projectUrl>
+		<iconUrl>http://media.glassdoor.com/sqls/12636/ipreo-squarelogo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains general-purpose utility classes</description>
+    <copyright>Copyright © IPREO 2015</copyright>
+    <dependencies>
+      <dependency id="Unity" version="2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Utilities\bin\Release\Utilities.dll" target="lib\net35\Utilities.dll" />
+    <file src="..\Utilities\bin\Release\Utilities.pdb" target="lib\net35\Utilities.pdb" />
+
+    <file src="..\Utilities\**\*.cs" target="src\Utilities" />
+    <file src="..\Utilities\**\*.csproj" target="src\Utilities" />
+    <file src="..\Utilities\**\*.vspscc" target="src\Utilities" />
+    <file src="..\Utilities\**\packages.config" target="src\Utilities" />
+
+    <file src="..\Certificates\Key.pfx" target="src\Certificates\Key.pfx" />
+  </files>
+</package>

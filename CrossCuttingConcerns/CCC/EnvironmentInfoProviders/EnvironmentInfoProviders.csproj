@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E85000BF-D1E4-43AC-9993-C5B2B76F2C26}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnvironmentInfoProviders</RootNamespace>
+    <AssemblyName>EnvironmentInfoProviders</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Certificates\Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Google|AnyCPU'">
+    <OutputPath>bin\Google\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\Certificates\Key.pfx">
+      <Link>Key.pfx</Link>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Google.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="App.QA.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="build\EnvironmentInfoProviders.targets" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tools\Utilities.Cryptography.psm1" />
+    <None Include="tools\Utilities.Cryptography.UI.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.0\lib\20\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.0\lib\20\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.3.1.416.3\lib\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyBoundAppConfigEIPFactory.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Contracts\ILdapInfoProvider.cs" />
+    <Compile Include="Contracts\ISmtpSettingsProvider.cs" />
+    <Compile Include="Infrastructure\DependencyResolution\AssemblyBoundAppConfigEnvironmentInfoProviderExtension.cs" />
+    <Compile Include="Infrastructure\DependencyResolution\BuilderStrategies\AssemblyBoundAppConfigEnvironmentInfoProviderStrategy.cs" />
+    <Compile Include="Infrastructure\DependencyResolution\BuilderStrategies\KeyValueConfigurationEnvironmentInfoProviderStrategy.cs" />
+    <Compile Include="Infrastructure\DependencyResolution\KeyValueConfigurationEnvironmentInfoProviderExtension.cs" />
+    <Compile Include="Contracts\IAssemblyBoundAppConfigEIPFactory.cs" />
+    <Compile Include="Contracts\ICfEnvironmentInfoProvider.cs" />
+    <Compile Include="Contracts\ICFWebApiMethodPathsProvider.cs" />
+    <Compile Include="Contracts\IDataBaseInfoProvider.cs" />
+    <Compile Include="Contracts\IEnvironmentInfoProvider.cs" />
+    <Compile Include="Contracts\IEnvironmentInfoProviderFactory.cs" />
+    <Compile Include="Contracts\IQvalWebApiMethodPathProvider.cs" />
+    <Compile Include="Contracts\ISupportInfoProvider.cs" />
+    <Compile Include="EnvironmentInfoProviderFactory.cs" />
+    <Compile Include="RequiresEncryptionAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities.Cryptography\Utilities.Cryptography.csproj">
+      <Project>{63ecfa2a-1f3f-45a5-b988-89053a7db82b}</Project>
+      <Name>Utilities.Cryptography</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <BuildConfigurations Include="Debug">
+      <InProject>false</InProject>
+    </BuildConfigurations>
+    <BuildConfigurations Include="Release">
+      <InProject>false</InProject>
+    </BuildConfigurations>
+    <BuildConfigurations Include="QA">
+      <InProject>false</InProject>
+    </BuildConfigurations>
+    <BuildConfigurations Include="Google">
+      <InProject>false</InProject>
+    </BuildConfigurations>
+  </ItemGroup>
+  <Target Name="XdtCopyTransformLibs" AfterTargets="BeforeCompile" DependsOnTargets="BeforeCompile">
+    <Message Text="Executing XdtCopyTransformLibs Target..." />
+    <CreateItem Include="@(BuildConfigurations)" AdditionalMetadata="LibSourceFileFullPath=%(LibSourceFiles.FullPath);LibSourceFileName=%(LibSourceFiles.Filename)%(LibSourceFiles.Extension)">
+      <Output ItemName="LibSourceFilesForBuildConfigurations" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="%(LibSourceFilesForBuildConfigurations.LibSourceFileFullPath)" DestinationFiles="$(TargetDir)..\%(LibSourceFilesForBuildConfigurations.Identity)\xdt\%(LibSourceFilesForBuildConfigurations.LibSourceFileName)" SkipUnchangedFiles="true" ContinueOnError="true" Retries="1" />
+  </Target>
+  <Target Name="XdtTransformConfigurations" AfterTargets="AfterCompile" DependsOnTargets="AfterCompile">
+    <Message Text="Executing XdtTransformConfigurations Target..." />
+    <TransformXml Source="App.config" Destination="$(IntermediateOutputPath)$(TargetName).%(BuildConfigurations.Identity)$(TargetExt).config" Transform="App.%(BuildConfigurations.Identity).config" />
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="App.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetName).%(BuildConfigurations.Identity)$(TargetExt).config">
+        <TargetPath>$(TargetName).%(BuildConfigurations.Identity)$(TargetExt).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+  <Import Project="..\packages\CustomXdtTransforms.1.1.0.204\build\CustomXdtTransforms.targets" Condition="Exists('..\packages\CustomXdtTransforms.1.1.0.204\build\CustomXdtTransforms.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

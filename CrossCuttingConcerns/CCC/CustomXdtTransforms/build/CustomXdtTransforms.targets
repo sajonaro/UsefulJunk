@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<LibSourceFiles Include="$(MSBuildThisFileDirectory)..\tools\*.*" />
+	</ItemGroup>
+	<Target Name="BeforeCompile">
+		<Message Text="Executing CustomXdtTransforms ..." />
+		<Copy SourceFiles="@(LibSourceFiles)" DestinationFiles="@(LibSourceFiles->'$(TargetDir)xdt\%(Filename)%(Extension)')" Retries="1" ContinueOnError="true" SkipUnchangedFiles="true" />
+	</Target>
+	<UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v12.0\Web\Microsoft.Web.Publishing.Tasks.dll" />
+	<Target Name="AfterCompile" Condition="exists('app.$(Configuration).config')">
+		<!-- Generate transformed app config in the intermediate directory -->
+		<TransformXml Source="App.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="App.$(Configuration).config" />
+		<!-- Force build process to use the transformed configuration file from now on. -->
+		<ItemGroup>
+			<AppConfigWithTargetPath Remove="App.config" />
+			<AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+				<TargetPath>$(TargetFileName).config</TargetPath>
+			</AppConfigWithTargetPath>
+		</ItemGroup>
+	</Target>
+</Project>

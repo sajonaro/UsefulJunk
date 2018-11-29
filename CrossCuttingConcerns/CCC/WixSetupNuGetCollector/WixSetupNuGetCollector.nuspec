@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WixSetupNuGetCollector</id>
+    <version>$version$</version>
+    <title>WiX Setup NuGet Collector</title>
+    <authors>IPREO</authors>
+    <owners>IPREO</owners>
+    <licenseUrl>http://www.ipreo.com/disclaimer.html</licenseUrl>
+    <projectUrl>http://www.ipreo.com/</projectUrl>
+    <iconUrl>http://media.glassdoor.com/sqls/12636/ipreo-squarelogo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NuGet package, that adds ability for WiX Setup project to collect NuGet lib dependencies of referenced projects.</description>
+    <copyright>© 2015 Ipreo. All rights reserved.</copyright>
+    <tags>wix setup nuget</tags>
+  </metadata>
+  <files>
+    <file src="build\WixSetupNuGetCollector.targets" target="build\WixSetupNuGetCollector.targets" />
+    <file src="tools\WixSetupNuGetCollector.ps1" target="tools\WixSetupNuGetCollector.ps1" />
+  </files>
+</package>
